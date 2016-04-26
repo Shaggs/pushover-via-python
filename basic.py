@@ -16,8 +16,8 @@ params = {
     }
 output = requests.post('https://api.pushover.net/1/messages.json', data=params)
 print "sending"
-jout = output.json()
-if jout['status'] is 1:
+out = output.json()
+if out['status'] is 1:
  print "message sent"
 else:
 	print "message not sent"
