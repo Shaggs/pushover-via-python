@@ -1,12 +1,12 @@
-#!/usr/bin/python
+#!/usr/bin/env-python3
 import requests
 
 app = "" # add token from pushover here
 user = "" # add your user token here
 
-title = raw_input("Insert Title: ")
+title = input("Insert Title: ")
 
-msg = raw_input("Insert Message: ")
+msg = input("Insert Message: ")
 params = {
     'token': app,
     'user': user,
@@ -18,7 +18,7 @@ output = requests.post('https://api.pushover.net/1/messages.json', data=params)
 print "sending"
 out = output.json()
 if out['status'] is 1:
- print "message sent"
+ print("message sent")
 else:
-	print "message not sent"
+	print ("message not sent")
 	print output.json()
